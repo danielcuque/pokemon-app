@@ -13,9 +13,7 @@ export const CardPokemon = ({ pokemon }) => {
   const pokemonFamily = types.map((type) => type.type.name);
 
   return (
-    <div
-      className={`mainContainer bg-white rounded-xl border-2 border-acent w-full animate__animated animate__fadeIn`}
-    >
+    <div className="mainContainer bg-white rounded-xl border-2 border-acent w-full animate__animated animate__fadeIn">
       {/* Contenedor para la foto del pokemon */}
       <div
         id="photo-container"
@@ -29,11 +27,7 @@ export const CardPokemon = ({ pokemon }) => {
       <div id="information-container" className="m-5">
         <h4>
           <span>Tipo</span>
-          <p
-            className={`capitalize border-2 border-pokemon-${pokemonFamily}  p-1 rounded`}
-          >
-            {pokemonFamily}
-          </p>
+          <p className="capitalize">{pokemonFamily}</p>
         </h4>
         <h4>
           <span>Altura</span> {height / 10} m
