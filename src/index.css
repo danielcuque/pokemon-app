@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h4 {
+    @apply flex flex-row justify-between mb-5 text-lg;
+  }
+  span {
+    @apply font-bold mr-2;
+  }
+}
+
+@layer components {
+  .mainContainer {
+    @apply flex flex-col;
+  }
+
+  @screen md {
+    .principalContainer {
+      @apply flex flex-col justify-center align-middle items-center;
+    }
+  }
+}
