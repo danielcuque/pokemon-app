@@ -9,9 +9,6 @@ export const CardPokemon = ({ pokemon }) => {
     abilities,
   } = pokemon;
 
-  //   Familia de pokemones
-  const pokemonFamily = types.map((type) => type.type.name);
-
   return (
     <div className="mainContainer bg-white rounded-xl border-2 border-acent w-full animate__animated animate__fadeIn">
       {/* Contenedor para la foto del pokemon */}
@@ -27,7 +24,14 @@ export const CardPokemon = ({ pokemon }) => {
       <div id="information-container" className="m-5">
         <h4>
           <span>Tipo</span>
-          <p className="capitalize">{pokemonFamily}</p>
+          {types.map((type) => (
+            <p
+              key={type.type.name}
+              className={`rounded capitalize p-1 border-2 ${type.type.name}`}
+            >
+              {type.type.name}
+            </p>
+          ))}
         </h4>
         <h4>
           <span>Altura</span> {height / 10} m
@@ -37,7 +41,7 @@ export const CardPokemon = ({ pokemon }) => {
         </h4>
         <h4>
           <span>Habilidades</span>
-          {abilities.map(({ ability }) => ability.name)}
+          {abilities.map(({ ability }) => ability.name).join(", ")}
         </h4>
       </div>
     </div>
